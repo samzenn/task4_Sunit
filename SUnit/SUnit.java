@@ -54,6 +54,16 @@ private static long failedChecks = 0;
 		    }
 		  }
 	  
+	  public static void checklesserfive(long value1, long value2) {
+		    if (value1 < 5 && value2 < 5 ) {
+		      addToReport(String.format("  %d <5 %d", value1, value2));
+		      passedChecks++;
+		    } else {
+		      addToReport(String.format("* %d !<5 %d", value1, value2));
+		      failedChecks++;
+		    }
+		  }
+	  
 	  
 	  /*
 	   * This outputs the messages form the report.
