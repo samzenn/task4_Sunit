@@ -16,6 +16,9 @@ public class TestSet {
 		    checkEquals(s.getB(), 4);
 		    checkNotEquals(s.getB(), 4);    
 		    checkNotEquals(s.getB(), 5);    
+		    checklesserfive(s.getB(), 8);    
+		    checklesserfive(s.getB(), 8);    
+
 		  }
 
 		  void checkSquareA(){
