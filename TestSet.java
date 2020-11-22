@@ -1,6 +1,5 @@
-import static KUnit.KUnit.checkEquals;
-import static KUnit.KUnit.checkNotEquals;
-import static KUnit.KUnit.report;
+import static SUnit.SUnit.*;
+
 
 /*
  * This demonstrates the use of the SUnit testing tool.
@@ -10,10 +9,9 @@ import static KUnit.KUnit.report;
 
 public class TestSet {
 
-	public class TestSimple {
 
 		  void checkConstructorAndAccess(){
-		    Simple s = new Simple(3, 4);
+		    SimpleSet s = new SimpleSet(3, 4);
 		    checkEquals(s.getA(), 4);
 		    checkEquals(s.getB(), 4);
 		    checkNotEquals(s.getB(), 4);    
@@ -21,15 +19,15 @@ public class TestSet {
 		  }
 
 		  void checkSquareA(){
-		    Simple s = new Simple(3, 4);
+		    SimpleSet s = new SimpleSet(3, 4);
 		    s.squareA();
 		    checkEquals(s.getA(), 9);
 		  }
-
-		  public static void main(String[] args) {
-		    TestSimple ts = new TestSimple();
+		public static void main(String[] args) {
+		    TestSet ts = new TestSet();
 		    ts.checkConstructorAndAccess();
 		    ts.checkSquareA();
 		    report();
 		  }
 }
+
