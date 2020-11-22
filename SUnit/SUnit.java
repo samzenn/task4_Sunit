@@ -24,6 +24,50 @@ private static int checksMade = 0;
 	    checks.add(String.format("%04d: %s", checksMade++, txt));
 	  }
 	
-
+	/*
+	 * This method similar to an assertion in JUnit
+	 * It checks two integers are equal and adds message to the report
+	 */
+	
+	  public static void checkEquals(long value1, long value2) {
+		    if (value1 == value2) {
+		      addToReport(String.format("  %d == %d", value1, value2));
+		      passedChecks++;
+		    } else {
+		      addToReport(String.format("* %d == %d", value1, value2));
+		      failedChecks++;
+		    }
+		  }
+	  
+	  /*
+	   * this method checks that two integers whether those are not equal and adds an appropriate message to the report.
+	   */
+	  
+	  public static void checkNotEquals(int value1, int value2) {
+		    if (value1 != value2) {
+		      addToReport(String.format("  %d != %d", value1, value2));
+		      passedChecks++;
+		    } else {
+		      addToReport(String.format("* %d != %d", value1, value2));
+		      failedChecks++;
+		    }
+		  }
+	  
+	  
+	  /*
+	   * This outputs the messages form the report.
+	   */
+		  
+	  public static void report() {
+		    System.out.printf("%d checks passed\n", passedChecks);
+		    System.out.printf("%d checks failed\n", failedChecks);
+		    int n = passedChecks + failedChecks;
+		    System.out.printf("%d checks total\n", n);
+		    System.out.println();
+		    
+		    for (String check : checks) {
+		      System.out.println(check);
+		    }
+		  }
 
 }

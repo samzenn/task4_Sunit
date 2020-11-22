@@ -1,15 +1,18 @@
-package SUnit;
+import static KUnit.KUnit.checkEquals;
+import static KUnit.KUnit.checkNotEquals;
+import static KUnit.KUnit.report;
+
 /*
- * in this code demonstrates the use of SUnit tool which provide reports.
- * that contains messages generated from the check methods.
+ * This demonstrates the use of the SUnit testing tool.
+ * it's generate a report which contains messages generated from the check methods.
+ * 
  */
 
-import static SUnit.KUnit.checkEquals;
-import static SUnit.KUnit.checkNotEquals;
-import static SUnit.KUnit.report;
-
 public class TestSet {
-	  void checkConstructorAndAccess(){
+
+	public class TestSimple {
+
+		  void checkConstructorAndAccess(){
 		    Simple s = new Simple(3, 4);
 		    checkEquals(s.getA(), 4);
 		    checkEquals(s.getB(), 4);
@@ -24,7 +27,7 @@ public class TestSet {
 		  }
 
 		  public static void main(String[] args) {
-		    TestSet ts = new TestSet();
+		    TestSimple ts = new TestSimple();
 		    ts.checkConstructorAndAccess();
 		    ts.checkSquareA();
 		    report();
